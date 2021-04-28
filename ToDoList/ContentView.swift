@@ -21,7 +21,7 @@ struct ContentView: View {
         VStack {
             NavigationView {
                 List (tasks) { task in
-                    Text(task.title!)
+                    CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
                 }
                 .toolbar(content: {
                     ToolbarItemGroup(placement: .bottomBar) {
