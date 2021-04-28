@@ -20,6 +20,12 @@ struct CheckBox: View {
 }
 
 struct CheckboxCell: View {
+    
+    @Environment(\.managedObjectContext)
+    private var viewContext
+    
+    @FetchRequest(sortDescriptors: [])
+    private var tasks: FetchedResults<Task>
 
     @State var title: String
     @State var isChecked = false
@@ -36,6 +42,8 @@ struct CheckboxCell: View {
 
         }.onTapGesture {
             isChecked.toggle()
+            // find task in core data by title and set checkbox
+            tasks.first(where: { $0.title == title })?.isChecked = isChecked
         }
     }
 
