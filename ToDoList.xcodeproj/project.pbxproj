@@ -13,6 +13,7 @@
 		E2BE257D2639314F00E42237 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2BE257C2639314F00E42237 /* Preview Assets.xcassets */; };
 		E2BE257F2639314F00E42237 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE257E2639314F00E42237 /* Persistence.swift */; };
 		E2BE25822639314F00E42237 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25802639314F00E42237 /* ToDoList.xcdatamodeld */; };
+		E2BE258A2639356300E42237 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25892639356300E42237 /* NewTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E2BE257E2639314F00E42237 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E2BE25812639314F00E42237 /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
 		E2BE25832639314F00E42237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2BE25892639356300E42237 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				E2BE25752639314A00E42237 /* ToDoListApp.swift */,
 				E2BE25772639314A00E42237 /* ContentView.swift */,
+				E2BE25892639356300E42237 /* NewTaskView.swift */,
 				E2BE25792639314F00E42237 /* Assets.xcassets */,
 				E2BE257E2639314F00E42237 /* Persistence.swift */,
 				E2BE25832639314F00E42237 /* Info.plist */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2BE257F2639314F00E42237 /* Persistence.swift in Sources */,
+				E2BE258A2639356300E42237 /* NewTaskView.swift in Sources */,
 				E2BE25782639314A00E42237 /* ContentView.swift in Sources */,
 				E2BE25762639314A00E42237 /* ToDoListApp.swift in Sources */,
 				E2BE25822639314F00E42237 /* ToDoList.xcdatamodeld in Sources */,
