@@ -27,16 +27,26 @@ struct ContentView: View {
             // if user pressed cancel button
             searchText = ""
         } content: {
-            List {
-                ForEach (tasks) { task in
-                    
-                    if task.title!.lowercased().contains(searchText) || searchText.isEmpty {
-                        CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
+            
+            ZStack {
+                
+                if tasks.count == 0 {
+                    Text("Нет задач")
+                        .font(.system(size: 26))
+                        .foregroundColor(Color(.systemGray2))
+                } else {
+                    List {
+                        ForEach (tasks) { task in
+                            
+                            if task.title!.lowercased().contains(searchText) || searchText.isEmpty {
+                                CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
+                            }
+                        }
+                        .onDelete(perform: deleteTask(at:))
                     }
+                    
                 }
-                .onDelete(perform: deleteTask(at:))
-            }
-            .toolbar {
+            }.toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Spacer()
                     Button(action: { isNewTaskViewShow.toggle() }) {
