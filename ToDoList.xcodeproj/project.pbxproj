@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E27E0EC82639F0DB00E0178F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E0EC72639F0DB00E0178F /* SearchBarView.swift */; };
 		E2BE25762639314A00E42237 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25752639314A00E42237 /* ToDoListApp.swift */; };
 		E2BE25782639314A00E42237 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25772639314A00E42237 /* ContentView.swift */; };
 		E2BE257A2639314F00E42237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2BE25792639314F00E42237 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E27E0EC72639F0DB00E0178F /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		E2BE25722639314A00E42237 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BE25752639314A00E42237 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		E2BE25772639314A00E42237 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				E2BE25892639356300E42237 /* NewTaskView.swift */,
+				E27E0EC72639F0DB00E0178F /* SearchBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E27E0EC82639F0DB00E0178F /* SearchBarView.swift in Sources */,
 				E2BE257F2639314F00E42237 /* Persistence.swift in Sources */,
 				E2BE259426395D9A00E42237 /* CreateButtonView.swift in Sources */,
 				E2BE259226395D3000E42237 /* TitleTextFieldView.swift in Sources */,

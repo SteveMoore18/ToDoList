@@ -12,37 +12,44 @@ struct ContentView: View {
     // MARK: - Core data
     @Environment(\.managedObjectContext)
     private var viewContext
-
+    
     @FetchRequest(sortDescriptors: [])
     private var tasks: FetchedResults<Task>
     
     @State var isNewTaskViewShow = false
-
+    
+    @State var searchText = ""
+    
     // MARK: - body
     var body: some View {
-        VStack {
-            NavigationView {
-                List {
-                    ForEach (tasks) { task in
+        
+        SearchBarView(text: $searchText) {
+            // if user pressed cancel button
+            searchText = ""
+        } content: {
+            List {
+                ForEach (tasks) { task in
+                    
+                    if task.title!.lowercased().contains(searchText) || searchText.isEmpty {
                         CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
                     }
-                    .onDelete(perform: deleteTask(at:))
                 }
-                .toolbar {
-                    ToolbarItemGroup(placement: .bottomBar) {
-                        Spacer()
-                        Button(action: { isNewTaskViewShow.toggle() }) {
-                            Image(systemName: "plus.app")
-                            Text("Новая задача")
-                        }
+                .onDelete(perform: deleteTask(at:))
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Spacer()
+                    Button(action: { isNewTaskViewShow.toggle() }) {
+                        Image(systemName: "plus.app")
+                        Text("Новая задача")
                     }
                 }
-                .navigationBarItems(trailing: Button("Delete all data", action: { deleteAllData() }))
-                .navigationTitle("Задачи")
-                .sheet(isPresented: $isNewTaskViewShow) {
-                    NewTaskView(isNewTaskViewShow: $isNewTaskViewShow)
-                        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                }
+            }
+            .navigationBarItems(trailing: Button("Delete all data", action: { deleteAllData() }))
+            .navigationTitle("Задачи")
+            .sheet(isPresented: $isNewTaskViewShow) {
+                NewTaskView(isNewTaskViewShow: $isNewTaskViewShow)
+                    .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
             }
         }
     }
