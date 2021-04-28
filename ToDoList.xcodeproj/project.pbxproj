@@ -15,6 +15,9 @@
 		E2BE25822639314F00E42237 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25802639314F00E42237 /* ToDoList.xcdatamodeld */; };
 		E2BE258A2639356300E42237 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25892639356300E42237 /* NewTaskView.swift */; };
 		E2BE258C2639407F00E42237 /* CheckboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE258B2639407F00E42237 /* CheckboxCell.swift */; };
+		E2BE259026395CAB00E42237 /* CancelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE258F26395CAB00E42237 /* CancelButtonView.swift */; };
+		E2BE259226395D3000E42237 /* TitleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE259126395D3000E42237 /* TitleTextFieldView.swift */; };
+		E2BE259426395D9A00E42237 /* CreateButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE259326395D9A00E42237 /* CreateButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		E2BE25832639314F00E42237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2BE25892639356300E42237 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		E2BE258B2639407F00E42237 /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
+		E2BE258F26395CAB00E42237 /* CancelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButtonView.swift; sourceTree = "<group>"; };
+		E2BE259126395D3000E42237 /* TitleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldView.swift; sourceTree = "<group>"; };
+		E2BE259326395D9A00E42237 /* CreateButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +66,10 @@
 		E2BE25742639314A00E42237 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				E2BE258E2639595C00E42237 /* Views */,
 				E2BE258D2639432E00E42237 /* UI */,
 				E2BE25752639314A00E42237 /* ToDoListApp.swift */,
 				E2BE25772639314A00E42237 /* ContentView.swift */,
-				E2BE25892639356300E42237 /* NewTaskView.swift */,
 				E2BE25792639314F00E42237 /* Assets.xcassets */,
 				E2BE257E2639314F00E42237 /* Persistence.swift */,
 				E2BE25832639314F00E42237 /* Info.plist */,
@@ -84,9 +90,28 @@
 		E2BE258D2639432E00E42237 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E2BE259526395E7500E42237 /* Buttons */,
+				E2BE259126395D3000E42237 /* TitleTextFieldView.swift */,
 				E2BE258B2639407F00E42237 /* CheckboxCell.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E2BE258E2639595C00E42237 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2BE25892639356300E42237 /* NewTaskView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E2BE259526395E7500E42237 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E2BE258F26395CAB00E42237 /* CancelButtonView.swift */,
+				E2BE259326395D9A00E42237 /* CreateButtonView.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +184,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2BE257F2639314F00E42237 /* Persistence.swift in Sources */,
+				E2BE259426395D9A00E42237 /* CreateButtonView.swift in Sources */,
+				E2BE259226395D3000E42237 /* TitleTextFieldView.swift in Sources */,
+				E2BE259026395CAB00E42237 /* CancelButtonView.swift in Sources */,
 				E2BE258A2639356300E42237 /* NewTaskView.swift in Sources */,
 				E2BE258C2639407F00E42237 /* CheckboxCell.swift in Sources */,
 				E2BE25782639314A00E42237 /* ContentView.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    // MARK: - Core data
     @Environment(\.managedObjectContext)
     private var viewContext
 
@@ -17,6 +18,7 @@ struct ContentView: View {
     
     @State var isNewTaskViewShow = false
 
+    // MARK: - body
     var body: some View {
         VStack {
             NavigationView {
@@ -25,36 +27,29 @@ struct ContentView: View {
                         CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
                     }
                 }
-                .toolbar(content: {
+                .toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {
                         Spacer()
-                        Button(action: {
-                            isNewTaskViewShow.toggle()
-                        }, label: {
+                        Button(action: { isNewTaskViewShow.toggle() }) {
                             Image(systemName: "plus.app")
                             Text("Новая задача")
-                        })
+                        }
                     }
-                })
-                .navigationBarItems(trailing: Button("Delete all data", action: {
-                    for i in tasks {
-                        viewContext.delete(i)
-                    }
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        fatalError("Error with saving new task! \(error)")
-                    }
-                }))
+                }
+                .navigationBarItems(trailing: Button("Delete all data", action: { deleteAllData() }))
                 .navigationTitle("Задачи")
-                .sheet(isPresented: $isNewTaskViewShow, content: {
+                .sheet(isPresented: $isNewTaskViewShow) {
                     NewTaskView(isNewTaskViewShow: $isNewTaskViewShow)
                         .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                })
+                }
             }
         }
     }
-
+    
+    // MARK: - private functions
+    private func deleteAllData() {
+        tasks.forEach { viewContext.delete($0) }
+    }
     
 }
 
