@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CreateButtonView: View {
     
+    @Environment(\.colorScheme)
+    var colorScheme
+    
     var title: String
     var action: () -> ()
     
@@ -22,6 +25,7 @@ struct CreateButtonView: View {
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(Color.blue)
+                .foregroundColor(colorScheme == .dark ? Color(.systemGray6) : Color.white)
                 .cornerRadius(13)
                 .foregroundColor(Color.white)
                 .padding(.trailing, 20)
