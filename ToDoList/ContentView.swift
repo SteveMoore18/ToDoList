@@ -20,8 +20,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             NavigationView {
-                List (tasks) { task in
-                    CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
+                List {
+                    ForEach (tasks) { task in
+                        CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
+                    }
                 }
                 .toolbar(content: {
                     ToolbarItemGroup(placement: .bottomBar) {
@@ -34,6 +36,16 @@ struct ContentView: View {
                         })
                     }
                 })
+                .navigationBarItems(trailing: Button("Delete all data", action: {
+                    for i in tasks {
+                        viewContext.delete(i)
+                    }
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        fatalError("Error with saving new task! \(error)")
+                    }
+                }))
                 .navigationTitle("Задачи")
                 .sheet(isPresented: $isNewTaskViewShow, content: {
                     NewTaskView(isNewTaskViewShow: $isNewTaskViewShow)
