@@ -26,6 +26,7 @@ struct ContentView: View {
                     ForEach (tasks) { task in
                         CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
                     }
+                    .onDelete(perform: deleteTask(at:))
                 }
                 .toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {
@@ -49,6 +50,10 @@ struct ContentView: View {
     // MARK: - private functions
     private func deleteAllData() {
         tasks.forEach { viewContext.delete($0) }
+    }
+    
+    private func deleteTask(at offsets: IndexSet) {
+        offsets.forEach { viewContext.delete(tasks[$0]) }
     }
     
 }
