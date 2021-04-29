@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E2513999263A853700A92F16 /* SetPriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2513998263A853700A92F16 /* SetPriorityView.swift */; };
-		E251399C263A856200A92F16 /* FloatingButton in Frameworks */ = {isa = PBXBuildFile; productRef = E251399B263A856200A92F16 /* FloatingButton */; };
 		E27E0EC82639F0DB00E0178F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E0EC72639F0DB00E0178F /* SearchBarView.swift */; };
 		E2A600B3263AAE150087CA5B /* PriorityFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A600B2263AAE150087CA5B /* PriorityFlagView.swift */; };
 		E2A600B6263AAF250087CA5B /* PriorityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A600B5263AAF250087CA5B /* PriorityModel.swift */; };
+		E2A600B9263ABDE00087CA5B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = E2A600B8263ABDE00087CA5B /* SwiftPackageProductDependency */; };
 		E2BE25762639314A00E42237 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25752639314A00E42237 /* ToDoListApp.swift */; };
 		E2BE25782639314A00E42237 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25772639314A00E42237 /* ContentView.swift */; };
 		E2BE257A2639314F00E42237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2BE25792639314F00E42237 /* Assets.xcassets */; };
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E251399C263A856200A92F16 /* FloatingButton in Frameworks */,
+				E2A600B9263ABDE00087CA5B /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +153,7 @@
 			);
 			name = ToDoList;
 			packageProductDependencies = (
-				E251399B263A856200A92F16 /* FloatingButton */,
+				E2A600B8263ABDE00087CA5B /* SwiftPackageProductDependency */,
 			);
 			productName = ToDoList;
 			productReference = E2BE25722639314A00E42237 /* ToDoList.app */;
@@ -183,7 +183,7 @@
 			);
 			mainGroup = E2BE25692639314A00E42237;
 			packageReferences = (
-				E251399A263A856200A92F16 /* XCRemoteSwiftPackageReference "FloatingButton" */,
+				E2A600B7263ABDE00087CA5B /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = E2BE25732639314A00E42237 /* Products */;
 			projectDirPath = "";
@@ -414,7 +414,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E251399A263A856200A92F16 /* XCRemoteSwiftPackageReference "FloatingButton" */ = {
+		E2A600B7263ABDE00087CA5B /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/FloatingButton.git";
 			requirement = {
@@ -425,9 +425,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E251399B263A856200A92F16 /* FloatingButton */ = {
+		E2A600B8263ABDE00087CA5B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E251399A263A856200A92F16 /* XCRemoteSwiftPackageReference "FloatingButton" */;
+			package = E2A600B7263ABDE00087CA5B /* RemoteSwiftPackageReference */;
 			productName = FloatingButton;
 		};
 /* End XCSwiftPackageProductDependency section */
