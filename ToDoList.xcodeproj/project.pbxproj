@@ -3,11 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2513999263A853700A92F16 /* SetPriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2513998263A853700A92F16 /* SetPriorityView.swift */; };
+		E251399C263A856200A92F16 /* FloatingButton in Frameworks */ = {isa = PBXBuildFile; productRef = E251399B263A856200A92F16 /* FloatingButton */; };
 		E27E0EC82639F0DB00E0178F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E0EC72639F0DB00E0178F /* SearchBarView.swift */; };
+		E2A600B3263AAE150087CA5B /* PriorityFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A600B2263AAE150087CA5B /* PriorityFlagView.swift */; };
+		E2A600B6263AAF250087CA5B /* PriorityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A600B5263AAF250087CA5B /* PriorityModel.swift */; };
 		E2BE25762639314A00E42237 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25752639314A00E42237 /* ToDoListApp.swift */; };
 		E2BE25782639314A00E42237 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25772639314A00E42237 /* ContentView.swift */; };
 		E2BE257A2639314F00E42237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2BE25792639314F00E42237 /* Assets.xcassets */; };
@@ -22,7 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2513998263A853700A92F16 /* SetPriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPriorityView.swift; sourceTree = "<group>"; };
 		E27E0EC72639F0DB00E0178F /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		E2A600B2263AAE150087CA5B /* PriorityFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityFlagView.swift; sourceTree = "<group>"; };
+		E2A600B5263AAF250087CA5B /* PriorityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityModel.swift; sourceTree = "<group>"; };
 		E2BE25722639314A00E42237 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BE25752639314A00E42237 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		E2BE25772639314A00E42237 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,12 +50,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E251399C263A856200A92F16 /* FloatingButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2A600B4263AAEFF0087CA5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2A600B5263AAF250087CA5B /* PriorityModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E2BE25692639314A00E42237 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +84,7 @@
 		E2BE25742639314A00E42237 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				E2A600B4263AAEFF0087CA5B /* Model */,
 				E2BE258E2639595C00E42237 /* Views */,
 				E2BE258D2639432E00E42237 /* UI */,
 				E2BE25752639314A00E42237 /* ToDoListApp.swift */,
@@ -95,6 +112,7 @@
 				E2BE259526395E7500E42237 /* Buttons */,
 				E2BE259126395D3000E42237 /* TitleTextFieldView.swift */,
 				E2BE258B2639407F00E42237 /* CheckboxCell.swift */,
+				E2A600B2263AAE150087CA5B /* PriorityFlagView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -104,6 +122,7 @@
 			children = (
 				E2BE25892639356300E42237 /* NewTaskView.swift */,
 				E27E0EC72639F0DB00E0178F /* SearchBarView.swift */,
+				E2513998263A853700A92F16 /* SetPriorityView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +152,9 @@
 			dependencies = (
 			);
 			name = ToDoList;
+			packageProductDependencies = (
+				E251399B263A856200A92F16 /* FloatingButton */,
+			);
 			productName = ToDoList;
 			productReference = E2BE25722639314A00E42237 /* ToDoList.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +182,9 @@
 				Base,
 			);
 			mainGroup = E2BE25692639314A00E42237;
+			packageReferences = (
+				E251399A263A856200A92F16 /* XCRemoteSwiftPackageReference "FloatingButton" */,
+			);
 			productRefGroup = E2BE25732639314A00E42237 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,6 +212,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E27E0EC82639F0DB00E0178F /* SearchBarView.swift in Sources */,
+				E2513999263A853700A92F16 /* SetPriorityView.swift in Sources */,
+				E2A600B6263AAF250087CA5B /* PriorityModel.swift in Sources */,
+				E2A600B3263AAE150087CA5B /* PriorityFlagView.swift in Sources */,
 				E2BE257F2639314F00E42237 /* Persistence.swift in Sources */,
 				E2BE259426395D9A00E42237 /* CreateButtonView.swift in Sources */,
 				E2BE259226395D3000E42237 /* TitleTextFieldView.swift in Sources */,
@@ -384,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E251399A263A856200A92F16 /* XCRemoteSwiftPackageReference "FloatingButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/FloatingButton.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E251399B263A856200A92F16 /* FloatingButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E251399A263A856200A92F16 /* XCRemoteSwiftPackageReference "FloatingButton" */;
+			productName = FloatingButton;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E2BE25802639314F00E42237 /* ToDoList.xcdatamodeld */ = {

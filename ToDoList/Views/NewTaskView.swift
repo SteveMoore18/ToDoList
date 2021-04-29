@@ -23,12 +23,24 @@ struct NewTaskView: View {
     
     @State private var title = ""
     
+    @State private var priority = 0
+    
     // MARK: - body
     var body: some View {
         
         VStack {
             
             TitleTextFieldView(placeholder: "Название", title: $title)
+                .padding(.bottom, -15)
+            
+            HStack {
+                SetPriorityView(priority: $priority)
+                    .font(.system(size: 26))
+                    .frame(width: 30, height: 30)
+                    .padding()
+                    Spacer()
+            }
+            
             
             HStack {
                 
@@ -50,12 +62,13 @@ struct NewTaskView: View {
         let newTask = Task(context: viewContext)
         newTask.isChecked = false
         newTask.title = title
+        newTask.priority = Int16(priority)
     }
     
 }
 
-//struct NewTaskView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewTaskView().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-//    }
-//}
+struct NewTaskView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewTaskView(isNewTaskViewShow: .constant(true)).environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+    }
+}

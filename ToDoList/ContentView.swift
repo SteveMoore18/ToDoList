@@ -39,7 +39,12 @@ struct ContentView: View {
                         ForEach (tasks) { task in
                             
                             if task.title!.lowercased().contains(searchText) || searchText.isEmpty {
-                                CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
+                                HStack {
+                                    CheckboxCell(title: task.title ?? "Unknown task", isChecked: task.isChecked)
+                                    Spacer()
+                                    PriorityFlagView(priority: Int(task.priority))
+                                }
+                                
                             }
                         }
                         .onDelete(perform: deleteTask(at:))
