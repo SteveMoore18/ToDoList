@@ -20,7 +20,8 @@ struct SetPriorityView: View {
     
     var body: some View {
         
-        let mainButton = AnyView(Image(systemName: priority == 0 ? "flag.slash.fill" : "flag.fill").foregroundColor(Color(mainButtonColor)))
+        let mainButton = AnyView(Image(systemName: priority == 0 ? "flag.slash.fill" : "flag.fill").foregroundColor(Color(mainButtonColor)).opacity(0.9))
+        
         
         let floatingButton = FloatingButton(mainButtonView: mainButton, buttons: createPriorityButtons(), isOpen: $isOpen)
             .straight()
@@ -40,7 +41,7 @@ struct SetPriorityView: View {
         
         for i in 0..<4 {
             let button = AnyView(
-                SubmenuButton(buttonView: AnyView(Image(systemName: i == 0 ? "flag.slash.fill" : "flag.fill").foregroundColor(priorityModel.priorityColor[i])),
+                SubmenuButton(buttonView: AnyView(Image(systemName: i == 0 ? "flag.slash.fill" : "flag.fill").foregroundColor(priorityModel.priorityColor[i]).opacity(0.9)),
                               action: {
                                 priority = i
                                 mainButtonColor = UIColor(priorityModel.priorityColor[i])

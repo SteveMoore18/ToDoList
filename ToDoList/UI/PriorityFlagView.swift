@@ -16,7 +16,7 @@ struct PriorityFlagView: View {
     var body: some View {
         Image(systemName: "flag.fill")
             .foregroundColor(priorityModel.priorityColor[priority])
-            .opacity(priority == 0 ? 0 : 1) // if there is no priority, hide the flag
+            .opacity(priority == 0 ? 0 : 0.9) // if there is no priority, hide the flag
     }
     
 }
