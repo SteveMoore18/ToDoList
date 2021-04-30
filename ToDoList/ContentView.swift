@@ -20,6 +20,8 @@ struct ContentView: View {
     
     @State var searchText = ""
     
+    @ObservedObject var mainMenuModel = MainMenuModel()
+    
     // MARK: - body
     var body: some View {
         
@@ -36,7 +38,7 @@ struct ContentView: View {
                         .foregroundColor(Color(.systemGray2))
                 } else {
                     List {
-                        ForEach (tasks) { task in
+                        ForEach (sortTasks(array: tasks)) { task in
                             
                             if task.title!.lowercased().contains(searchText) || searchText.isEmpty {
                                 HStack {
@@ -59,8 +61,8 @@ struct ContentView: View {
                         Text("Новая задача")
                     }
                 }
-            }
-            .navigationBarItems(trailing: Button("Delete all data", action: { deleteAllData() }))
+            }//Button("Delete all data", action: { deleteAllData() }
+            .navigationBarItems(trailing: MainMenuView(mainMenuModel: mainMenuModel))
             .navigationTitle("Задачи")
             .sheet(isPresented: $isNewTaskViewShow) {
                 NewTaskView(isNewTaskViewShow: $isNewTaskViewShow)
@@ -76,6 +78,25 @@ struct ContentView: View {
     
     private func deleteTask(at offsets: IndexSet) {
         offsets.forEach { viewContext.delete(tasks[$0]) }
+    }
+    
+    private func sortTasks(array: FetchedResults<Task>) -> Array<Task> {
+        
+        switch mainMenuModel.sortMode {
+        case .Name:
+            
+            return array.sorted(by: {
+                mainMenuModel.sortBy == .Ascending ? ($0.title! < $1.title!) : ($0.title! > $1.title!)
+            })
+
+        case .Priority:
+            
+            return array.sorted(by: {
+                mainMenuModel.sortBy == .Ascending ?  ($0.priority < $1.priority) : ($0.priority > $1.priority)
+            })
+            
+        }
+        
     }
     
 }

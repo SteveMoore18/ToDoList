@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E2513999263A853700A92F16 /* SetPriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2513998263A853700A92F16 /* SetPriorityView.swift */; };
+		E253E26B263BDBCF00876C9E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253E26A263BDBCF00876C9E /* MainMenuView.swift */; };
+		E253E26D263C021500876C9E /* SortMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253E26C263C021500876C9E /* SortMenuView.swift */; };
+		E253E26F263C184700876C9E /* MainMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253E26E263C184700876C9E /* MainMenuModel.swift */; };
 		E27E0EC82639F0DB00E0178F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E0EC72639F0DB00E0178F /* SearchBarView.swift */; };
 		E2A600B3263AAE150087CA5B /* PriorityFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A600B2263AAE150087CA5B /* PriorityFlagView.swift */; };
 		E2A600B6263AAF250087CA5B /* PriorityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A600B5263AAF250087CA5B /* PriorityModel.swift */; };
-		E2A600B9263ABDE00087CA5B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = E2A600B8263ABDE00087CA5B /* SwiftPackageProductDependency */; };
+		E2A600B9263ABDE00087CA5B /* FloatingButton in Frameworks */ = {isa = PBXBuildFile; productRef = E2A600B8263ABDE00087CA5B /* FloatingButton */; };
 		E2BE25762639314A00E42237 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25752639314A00E42237 /* ToDoListApp.swift */; };
 		E2BE25782639314A00E42237 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE25772639314A00E42237 /* ContentView.swift */; };
 		E2BE257A2639314F00E42237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2BE25792639314F00E42237 /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		E2513998263A853700A92F16 /* SetPriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPriorityView.swift; sourceTree = "<group>"; };
+		E253E26A263BDBCF00876C9E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		E253E26C263C021500876C9E /* SortMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMenuView.swift; sourceTree = "<group>"; };
+		E253E26E263C184700876C9E /* MainMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuModel.swift; sourceTree = "<group>"; };
 		E27E0EC72639F0DB00E0178F /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		E2A600B2263AAE150087CA5B /* PriorityFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityFlagView.swift; sourceTree = "<group>"; };
 		E2A600B5263AAF250087CA5B /* PriorityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityModel.swift; sourceTree = "<group>"; };
@@ -50,17 +56,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A600B9263ABDE00087CA5B /* BuildFile in Frameworks */,
+				E2A600B9263ABDE00087CA5B /* FloatingButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E253E269263BDBAA00876C9E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E253E26A263BDBCF00876C9E /* MainMenuView.swift */,
+				E253E26C263C021500876C9E /* SortMenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		E2A600B4263AAEFF0087CA5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E2A600B5263AAF250087CA5B /* PriorityModel.swift */,
+				E253E26E263C184700876C9E /* MainMenuModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +136,7 @@
 		E2BE258E2639595C00E42237 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E253E269263BDBAA00876C9E /* Menu */,
 				E2BE25892639356300E42237 /* NewTaskView.swift */,
 				E27E0EC72639F0DB00E0178F /* SearchBarView.swift */,
 				E2513998263A853700A92F16 /* SetPriorityView.swift */,
@@ -153,7 +170,7 @@
 			);
 			name = ToDoList;
 			packageProductDependencies = (
-				E2A600B8263ABDE00087CA5B /* SwiftPackageProductDependency */,
+				E2A600B8263ABDE00087CA5B /* FloatingButton */,
 			);
 			productName = ToDoList;
 			productReference = E2BE25722639314A00E42237 /* ToDoList.app */;
@@ -183,7 +200,7 @@
 			);
 			mainGroup = E2BE25692639314A00E42237;
 			packageReferences = (
-				E2A600B7263ABDE00087CA5B /* RemoteSwiftPackageReference */,
+				E2A600B7263ABDE00087CA5B /* XCRemoteSwiftPackageReference "FloatingButton" */,
 			);
 			productRefGroup = E2BE25732639314A00E42237 /* Products */;
 			projectDirPath = "";
@@ -213,12 +230,15 @@
 			files = (
 				E27E0EC82639F0DB00E0178F /* SearchBarView.swift in Sources */,
 				E2513999263A853700A92F16 /* SetPriorityView.swift in Sources */,
+				E253E26D263C021500876C9E /* SortMenuView.swift in Sources */,
 				E2A600B6263AAF250087CA5B /* PriorityModel.swift in Sources */,
 				E2A600B3263AAE150087CA5B /* PriorityFlagView.swift in Sources */,
 				E2BE257F2639314F00E42237 /* Persistence.swift in Sources */,
 				E2BE259426395D9A00E42237 /* CreateButtonView.swift in Sources */,
 				E2BE259226395D3000E42237 /* TitleTextFieldView.swift in Sources */,
 				E2BE259026395CAB00E42237 /* CancelButtonView.swift in Sources */,
+				E253E26F263C184700876C9E /* MainMenuModel.swift in Sources */,
+				E253E26B263BDBCF00876C9E /* MainMenuView.swift in Sources */,
 				E2BE258A2639356300E42237 /* NewTaskView.swift in Sources */,
 				E2BE258C2639407F00E42237 /* CheckboxCell.swift in Sources */,
 				E2BE25782639314A00E42237 /* ContentView.swift in Sources */,
@@ -414,7 +434,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E2A600B7263ABDE00087CA5B /* RemoteSwiftPackageReference */ = {
+		E2A600B7263ABDE00087CA5B /* XCRemoteSwiftPackageReference "FloatingButton" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/FloatingButton.git";
 			requirement = {
@@ -425,9 +445,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E2A600B8263ABDE00087CA5B /* SwiftPackageProductDependency */ = {
+		E2A600B8263ABDE00087CA5B /* FloatingButton */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E2A600B7263ABDE00087CA5B /* RemoteSwiftPackageReference */;
+			package = E2A600B7263ABDE00087CA5B /* XCRemoteSwiftPackageReference "FloatingButton" */;
 			productName = FloatingButton;
 		};
 /* End XCSwiftPackageProductDependency section */
