@@ -23,6 +23,7 @@ struct MainMenuView: View {
             Image(systemName: "ellipsis.circle")
                 .font(.system(size: 24))
                 .foregroundColor(Color(.systemBlue))
+                .opacity(0.8)
         }
 
     }
